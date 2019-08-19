@@ -1,157 +1,141 @@
 // Find the maximum
-function maxOfTwoNumbers(a,b){
-  if(a>b){
-    return a
-  } else{
-    return b
-  }
-}
+const maxOfTwoNumbers = (a, b) => {
+  if (a > b) return a;
+  else return b;
+};
 
 // Finding Longest Word
-var words = [
-  'mystery',
-  'brother',
-  'aviator',
-  'crocodile',
-  'pearl',
-  'orchard',
-  'crackpot'
+let words = [
+  "mystery",
+  "brother",
+  "aviator",
+  "crocodile",
+  "pearl",
+  "orchard",
+  "crackpot"
 ];
-function findLongestWord(words){
-  var longestWord = '';
-  if (words.length == 0 ){
-  return undefined;
-  }
-     for (var i=0; i<words.length; i++){
-     if( longestWord.length < words[i].length){
-       longestWord = words[i]; 
-          }
-         }
-         console.log(longestWord)
-     return longestWord;      
-   }
+const findLongestWord = arr => {
+  let longestWord = "";
+  if (arr.length == 0) return undefined;
+  arr.forEach(e => {
+    if (longestWord.length < e.length) {
+      longestWord = e;
+    }
+  });
+  return longestWord;
+};
 
 // Calculating a Sum
-var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-function sumArray(numbers){
-  var suma=0;
-  for (i=0; i<numbers.length; i++){
-    suma += numbers[i];
-  } return suma;
-}
+let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+const sumArray = arr => {
+  let suma = 0;
+  arr.forEach(e => {
+    suma += e;
+  });
+  return suma;
+};
 
 // Calculate the Average
-var numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-function averageNumbers (numbersAvg) {
-  if (numbersAvg.length === 0) {
-    return undefined
-  } else return sumArray(numbersAvg) / numbersAvg.length
-}
+let numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+const averageNumbers = arr => {
+  if (arr.length === 0) return undefined;
+  else return sumArray(arr) / arr.length;
+};
 
 // Array of Strings
-var wordsArr = [
-  'seat',
-  'correspond',
-  'linen',
-  'motif',
-  'hole',
-  'smell',
-  'smart',
-  'chaos',
-  'fuel',
-  'palace'
+let wordsArr = [
+  "seat",
+  "correspond",
+  "linen",
+  "motif",
+  "hole",
+  "smell",
+  "smart",
+  "chaos",
+  "fuel",
+  "palace"
 ];
-function averageWordLength(array) {
+const averageWordLength = arr => {
   let sum = 0;
-  if (array.length === 0) {
-    return undefined
-  } 
-  for(let i = 0; i < array.length; i++) {
-    sum += array[i].length
-  } 
-  return sum/array.length;
-}
+  if (arr.length === 0) return undefined;
+  arr.forEach(e => {
+    sum += e.length;
+  });
+  return sum / arr.length;
+};
 
 // Unique Arrays
-var wordsUnique = [
-  'crab',
-  'poison',
-  'contagious',
-  'simple',
-  'bring',
-  'sharp',
-  'playground',
-  'poison',
-  'communion',
-  'simple',
-  'bring'
+let wordsUnique = [
+  "crab",
+  "poison",
+  "contagious",
+  "simple",
+  "bring",
+  "sharp",
+  "playground",
+  "poison",
+  "communion",
+  "simple",
+  "bring"
 ];
-function uniquifyArray(array){
+
+const uniquifyArray = arr => {
   let uniqueArray = [];
-  if (array.length === 0) {
-    return undefined
-  } 
-  for(let i = 0; i < array.length; i++) {
-    if (uniqueArray.indexOf(array[i]) === -1) {
-      uniqueArray.push(array[i]);
+  if (arr.length === 0) return undefined;
+  arr.forEach(e => {
+    if (uniqueArray.indexOf(e) === -1) {
+      uniqueArray.push(e);
     }
-  } return uniqueArray;
-}
+  });
+  return uniqueArray;
+};
 
 // Finding Elements
-var wordsFind = [
-  'machine',
-  'subset',
-  'trouble',
-  'starting',
-  'matter',
-  'eating',
-  'truth',
-  'disobedience'
+let wordsFind = [
+  "machine",
+  "subset",
+  "trouble",
+  "starting",
+  "matter",
+  "eating",
+  "truth",
+  "disobedience"
 ];
-function doesWordExist (words,word){
-  if (words.length>0){
-    for (var i=0; i<words.length; i++){
-      if (word==words[i]){
-        return true;
-      }
-    }
-  } return false;
-}
+
+const doesWordExist = (arr, e) => {
+  if (arr.length > 0) {
+    if (arr.includes(e)) return true;
+    else return false;
+  }
+  return false;
+};
 
 // Counting Repetion
-var wordsCount = [
-  'machine',
-  'matter',
-  'subset',
-  'trouble',
-  'starting',
-  'matter',
-  'eating',
-  'matter',
-  'truth',
-  'disobedience',
-  'matter'
+let wordsCount = [
+  "machine",
+  "matter",
+  "subset",
+  "trouble",
+  "starting",
+  "matter",
+  "eating",
+  "matter",
+  "truth",
+  "disobedience",
+  "matter"
 ];
-function howManyTimes(array,value){
-  var n = 0;
-  for(i = 0; i < array.length; i++){
-      if(array[i] == value){n++}
-  }
-if(array.length ==0){
-  return false;
-}else if (n==1){
-  return 1;
-}else if(n==0){
-  return 0;
-}else if(n==5){
-  return 5;
-}
-}
+const howManyTimes = (arr, e) => {
+  let n = 0;
+  if (arr.length === 0) return false;
+  arr.forEach(element => {
+    if (e == element) n++;
+  });
+  return n;
+};
 
 // Bonus Quest
 
-var matrix = [
+let matrix = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
   [81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 3, 49, 13, 36, 65],
@@ -173,40 +157,51 @@ var matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
-function greatestProduct(array) {
-  var isSame = true;
-  for(var i=0; i < array.length; i++) {
-    if (array[0] === array[i] && array[0] == 1){
-      return 1;
-    }else if (array[0] === array[i] && array[0] == 2){
-      return 16;
-    } 
-  }
-  return isSame;
-}
 
-function greatestProduct(matrix) {
+const greatestProduct = matrix => {
   let result1 = 0;
   let result2 = 0;
-  for(let i = 0; i < matrix.length; i++) {
+  for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
-      if (j < (matrix[i].length -3)) {
-        if((matrix[i][j] * matrix[i][j+1] * matrix[i][j+2] * matrix[i][j+3]) > result1) {
-          result1 = matrix[i][j] * matrix[i][j+1] * matrix[i][j+2] * matrix[i][j+3];
+      if (j < matrix[i].length - 3) {
+        if (
+          matrix[i][j] *
+          matrix[i][j + 1] *
+          matrix[i][j + 2] *
+          matrix[i][j + 3] >
+          result1
+        ) {
+          result1 =
+            matrix[i][j] *
+            matrix[i][j + 1] *
+            matrix[i][j + 2] *
+            matrix[i][j + 3];
         }
       }
     }
-  
-  for(let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-      if (i < (matrix.length -3)) {
-        if((matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j]) > result2) {
-          result2 = matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j];
+
+    for (let i = 0; i < matrix.length; i++) {
+      for (let j = 0; j < matrix[i].length; j++) {
+        if (i < matrix.length - 3) {
+          if (
+            matrix[i][j] *
+            matrix[i + 1][j] *
+            matrix[i + 2][j] *
+            matrix[i + 3][j] >
+            result2
+          ) {
+            result2 =
+              matrix[i][j] *
+              matrix[i + 1][j] *
+              matrix[i + 2][j] *
+              matrix[i + 3][j];
+          }
         }
       }
     }
-  } if (result1 > result2) {
-    return result1;
-  } return result2;
- }
-}
+    if (result1 > result2) {
+      return result1;
+    }
+    return result2;
+  }
+};
